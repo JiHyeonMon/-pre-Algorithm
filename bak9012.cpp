@@ -20,8 +20,12 @@ int main() {
 			if (s[j] == '(') {
 				num ++;
 			}
-			else {
-				num --;
+			else if (s[j] == ')' && num > 0) {	//else if 케이스 두개 나눠주는거 ! (한번 틀림)
+				num--;
+			}
+			else if (s[j] == ')' && num <= 0) {
+				num--;
+				break;
 			}
 		}
 
