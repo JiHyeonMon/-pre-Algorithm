@@ -7,19 +7,18 @@ c= int(input())
 list = [int(0) for i in range(10)]
 
 num = a*b*c
+
 for i in range(1,10):
     if num/10**i<10:
         d = 10**i
-        print(i)
         for j in range(0, i+2):
-            e = num//d
-            list[e]+=1
-            num = num%d
-            d = d//10
-            
-        break
+            try:
+                list[num//d]+=1
+                num = num%d
+                d = d//10
+            except ZeroDivisionError:
+                continue
+        break       
 
-print(d)
-        
-
-print(list)
+for i in range(0,10):
+    print(list[i])
