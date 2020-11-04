@@ -9,10 +9,20 @@
 '''
 
 n = int(input())
-if (n%5)%3 != 0:
-     if n%3 == 0:
-          print(n//3)
+cnt=0
+
+while n>0:
+     if n%5==0:
+          n-=5
+          cnt+=1
+     elif n%3==0:
+          n-=3
+          cnt+=1
+     elif n>5:
+          n-=5
+          cnt+=1
      else:
-          print(-1)
-else:
-     print(n//5+(n%5)//3)
+          cnt=-1
+          break
+
+print(cnt)
