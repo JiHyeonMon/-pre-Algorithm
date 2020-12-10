@@ -1,16 +1,14 @@
 #1003
-#피보나치 함수
+#피보나츠
 
-def fibonacci(n) :
-     num = []
-     if n == 0 :
-          num.append(0)
-     elif n == 1:
-          num.append(1)
-     else:
-          return fibonacci(n-1) + fibonacci(n-2)
-     return num
-
+def fib(k):
+     fib_zero=[1,0]
+     fib_one=[0,1]
+     for i in range(2, k+1):
+          fib_zero.append(fib_zero[i-2]+fib_zero[i-1])
+          fib_one.append(fib_one[i-2]+fib_one[i-1])
+     return "{} {}".format(fib_zero[k], fib_one[k])
+          
 for i in range(int(input())):
-     num = fibonacci(int(input()))
-     print("{} {}".format(num.count(0), num.count(1)))
+     n = int(input())
+     print(fib(n))
