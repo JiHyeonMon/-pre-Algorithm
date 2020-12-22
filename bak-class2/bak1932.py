@@ -6,8 +6,6 @@ num = []
 for i in range(n):
     num.append(list(map(int, input().split())))
 
-print(num)
-
 k = 2
 for i in range(1, n):
     for j in range(k):
@@ -19,5 +17,3 @@ for i in range(1, n):
             num[i][j] = max(num[i - 1][j - 1], num[i - 1][j]) + num[i][j]
     k += 1
 print(max(num[n - 1]))
-
-print(num)
