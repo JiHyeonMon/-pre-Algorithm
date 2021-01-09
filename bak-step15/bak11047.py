@@ -3,23 +3,16 @@
 
 N, price = map(int, input().split())
 cnt = 0
-i = 0
-total_cnt = 0
 money = []
 for i in range(N):
      money.append(int(input()))
 
-while price>0:
-     print(i, money[i], cnt)
-     if price > money[i]:
-          i+=1
-     else:
-          if price > money[i-1]*(cnt+1):
-               cnt+=1
-          else:
-               total_cnt += cnt
-               price-=money[i-1]*cnt
-               cnt = 0
-               i = 0
+for i in range(N-1, -1, -1):
+     if price == 0:
+          break
+     if money[i]>price:
+          continue
+     cnt+=price//money[i]
+     price%=money[i]
 
-print(total_cnt)
+print(cnt)
