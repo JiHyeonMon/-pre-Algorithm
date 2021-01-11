@@ -8,5 +8,4 @@ for i in expression[0].split('+'):
 for i in expression[1:]:
      answer-=sum(list(map(int, i.split('+'))))
      
-          
 print(answer)
