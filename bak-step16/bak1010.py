@@ -1,15 +1,7 @@
-#3036
-#링
-def gcd(a, b):
-     if a%b == 0:
-          return b
-     else:
-          return gcd(a, a%b)
+#1010
+#다리 놓기
 
-n = int(input())
-num = list(map(int, input().split()))
-a = num[0]
-
-for i in range(1, n):
-     k = gcd(a, num[i])
-     print(str(a//k)+"/"+str(num[i]//k))
+import math
+for i in range(int(input())):
+     a, b = map(int, input().split())
+     print(math.factorial(b)//(math.factorial(a)*math.factorial(b-a)))
