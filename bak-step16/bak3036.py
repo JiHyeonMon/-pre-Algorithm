@@ -1,10 +1,12 @@
 #3036
 #링
+
 def gcd(a, b):
-     if a%b == 0:
-          return b
-     else:
-          return gcd(a, a%b)
+     while b!=0:
+          n=a%b
+          a=b
+          b=n
+     return a
 
 n = int(input())
 num = list(map(int, input().split()))
